@@ -1,7 +1,7 @@
+
 local todo_list = {}
 
 local function addTask()
-
     io.write("Task name: ")
     local task = io.read("*line")
 
@@ -35,38 +35,57 @@ local function addTask()
 
     file:write("-------New Task -----" .. "\n")
     file:write("Task name: " .. task .. "\n")
-    file:write("Due date: " .. dueDate .. "\n")
-    file:write("Priority: " .. priority .. "\n")
-    file:write("Sub tasks: " .. subtasksStr .. "\n")
-    file:write("Date added: " .. os.date('%M-%d-%y %H:%M:%S') .. "\n")
+    file:write("Due date: " .. (dueDate or "") .. "\n")
+    file:write("Priority: " .. (priority or "") .. "\n")
+    file:write("Sub tasks: " .. (subtasksStr or "") .. "\n")
+    file:write("Date added: " .. os.date('%m-%d-%Y %H:%M:%S') .. "\n")
 
     file:close()
     print("Task added! Check the explorer for: taskList.txt")
-
-    io.write("Enter this to go to the list of commands")
 end
 
 local function completeTask()
     io.write("Task index: ")
-    local taskFile = io.open("taskList.txt", "r")
     local taskIndex = tonumber(io.read("*line"))
+
+    -- Define cookieAmounts as a table
+    local cookieAmounts = {"1 cookie", "2 cookies", "4 cookies", "10 cookies"}
+
+    -- Select a random cookie amount from the table
+    local randomIndex = math.random(#cookieAmounts)
+    local randomCookieAmounts = cookieAmounts[randomIndex]
+    
+    local cookieFile = io.open("totalCookies.txt", 'w')
+    cookieFile:write(randomCookieAmounts)
+    cookieFile:close()
+    
+
+    -- Print the result
+    print("Congrats on completing task " .. taskIndex .. "! Here is " ..
+              randomCookieAmounts)
 
     if todo_list[taskIndex] then
         todo_list[taskIndex].completed = true
 
         local randomCookieAmounts = {}
-        for i = 1, 15 do
-            table.insert(randomCookieAmounts, i)
-        end
+        for i = 1, 15 do table.insert(randomCookieAmounts, i) end
 
         local randomIndex = math.random(1, #randomCookieAmounts)
         print("Congratulations on completing that task! Here's: " ..
                   randomCookieAmounts[randomIndex])
     end
-    
-    io.close(taskFile)
 end
 
+local function printTodoList()
+    for i, task in ipairs(todo_list) do
+        print("Task " .. i .. ":")
+        print("  Task name: " .. task.task)
+        print("  Due date: " .. (task.dueDate or ""))
+        print("  Priority: " .. (task.priority or ""))
+        print("  Subtasks: " .. table.concat(task.subtasks, ", "))
+        print("  Completed: " .. (task.completed and "Yes" or "No"))
+    end
+end
 
 local function exitProgram()
     print("Exiting")
