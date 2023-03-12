@@ -5,6 +5,9 @@ local function addTask()
     io.write("Task name: ")
     local task = io.read("*line")
 
+    io.write("Project: ")
+    local project = io.read()
+
     io.write("Due date (MM-DD-YYYY): ")
     local dueDate = io.read("*line")
     if dueDate == "" then dueDate = nil end
@@ -39,6 +42,7 @@ local function addTask()
     file:write("\n")
     file:write("-------New Task -----" .. "\n")
     file:write("Task name: " .. task .. "\n")
+    file:write("Project: " .. project .. "\n")
     file:write("Due date: " .. (dueDate or "") .. "\n")
     file:write("Priority: " .. (priority or "") .. "\n")
     file:write("Lables: " .. lables .. "\n")
