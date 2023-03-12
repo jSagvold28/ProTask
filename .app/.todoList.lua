@@ -109,19 +109,20 @@ while true do
 
     print("")
     print("ProTask Commands:")
+    print("Format: command // what command does")
     print(" ")
 
-    print("1. add task")
-    print("2. complete task")
-    print("3. get todo list")
-    print("4. exit")
+    print("1. add // adds a task")
+    print("2. complete // completes a task")
+    print("3. get todo list // gets the todo list")
+    print("4. exit // exits and stops the rest of the outputted elements")
     print("") -- spacer
 
     local input = io.read()
 
-    if input == "add task" then
+    if input == "add" then
         addTask()
-    elseif input == "complete task" then
+    elseif input == "complete" then
         completeTask()
     elseif input == "get todo list" then
         printTodoList()
