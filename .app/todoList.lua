@@ -6,12 +6,12 @@ local function addTask()
     local task = io.read("*line")
 
 
-    io.write("Due date (YYYY-MM-DD): ")
+    io.write("Due date (MM-DD-YYYY): ")
     local dueDate = io.read("*line")
     if dueDate == "" then dueDate = nil end
 
 
-    io.write("Priority (High/Medium/Low): ")
+    io.write("Priority (Low//Medium//High//Top): ")
     local priority = io.read("*line")
     if priority == "" then priority = nil end
 
@@ -85,6 +85,8 @@ end
 
 local function exitProgram()
     print("Exiting")
+    os.execute("sleep 0.2")
+    print("Exited in 0.2s")
     os.exit()
 end
 
@@ -92,10 +94,14 @@ end
 while true do
 
     print("")
+    print("ProTask Commands:")
+    print(" ")
+
     print("1. add task")
     print("2. complete task")
     print("3. get todo list")
     print("4. exit")
+    print("") -- spacer
 
     local input = io.read()
 
@@ -107,5 +113,7 @@ while true do
         printTodoList()
     elseif input == "exit" then
         exitProgram()
+    else
+        print("ERROR: invalid input. Please try again with the prompts above")
     end
 end
