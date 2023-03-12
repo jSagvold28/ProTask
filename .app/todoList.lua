@@ -38,6 +38,7 @@ local function addTask()
     file:write("Due date: " .. dueDate .. "\n")
     file:write("Priority: " .. priority .. "\n")
     file:write("Sub tasks: " .. subtasksStr .. "\n")
+    file:write("Date added: " .. os.date('%M-%d-%y %H:%M:%S') .. "\n")
 
     file:close()
     print("Task added! Check the explorer for: taskList.txt")
@@ -47,35 +48,25 @@ end
 
 local function completeTask()
     io.write("Task index: ")
+    local taskFile = io.open("taskList.txt", "r")
     local taskIndex = tonumber(io.read("*line"))
 
     if todo_list[taskIndex] then
         todo_list[taskIndex].completed = true
 
-        local randomCookieAmounts = {"1 cookie", "5 cookies"}
+        local randomCookieAmounts = {}
+        for i = 1, 15 do
+            table.insert(randomCookieAmounts, i)
+        end
 
+        local randomIndex = math.random(1, #randomCookieAmounts)
         print("Congratulations on completing that task! Here's: " ..
-                  table.concat(randomCookieAmounts, ", "))
-
-    else
-        print("Error: Task not found.")
+                  randomCookieAmounts[randomIndex])
     end
+    
+    io.close(taskFile)
 end
 
-local function printTodoList()
-
-    print(string.format("%-3s %-20s %-12s %-10s %s", "ID", "Task", "Due Date",
-                        "Priority", "Subtasks"))
-    print(string.rep("-", 60))
-
-    for i, task in ipairs(todo_list) do
-        local taskStr = string.format("%-3d %-20s %-12s %-10s %s", i, task.task,
-                                      task.dueDate or "-", task.priority or "-",
-                                      table.concat(task.subtasks, ", ") or "-")
-        if task.completed then taskStr = taskStr .. " (Completed)" end
-        print(taskStr)
-    end
-end
 
 local function exitProgram()
     print("Exiting")
