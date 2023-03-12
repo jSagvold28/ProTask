@@ -13,6 +13,9 @@ local function addTask()
     local priority = io.read("*line")
     if priority == "" then priority = nil end
 
+    io.write("Lables: ")
+    local lables = io.read()
+
     io.write("Subtasks (separated by commas): ")
     local subtasksStr = io.read("*line")
     local subtasks = {}
@@ -33,14 +36,18 @@ local function addTask()
 
     local file = io.open("taskList.txt", "a")
 
+    file:write("\n")
     file:write("-------New Task -----" .. "\n")
     file:write("Task name: " .. task .. "\n")
     file:write("Due date: " .. (dueDate or "") .. "\n")
     file:write("Priority: " .. (priority or "") .. "\n")
+    file:write("Lables: " .. lables .. "\n")
     file:write("Sub tasks: " .. (subtasksStr or "") .. "\n")
     file:write("Date added: " .. os.date('%m-%d-%Y %H:%M:%S') .. "\n")
+    file:write("\n")
 
     file:close()
+    print("") -- spacer
     print("Task added! Check the explorer for: taskList.txt")
 end
 
