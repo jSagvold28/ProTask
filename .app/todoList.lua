@@ -81,20 +81,20 @@ end
 while true do
 
     print("")
-    print("1. Add task")
-    print("2. Complete task")
-    print("3. Print to-do list")
-    print("4. Exit")
+    print("1. add task")
+    print("2. complete task")
+    print("3. get todo list")
+    print("4. exit")
 
     local input = io.read()
 
-    if input == "Add task" then
+    if input == "add task" then
         addTask()
-    elseif input == "Complete task" then
+    elseif input == "complete task" then
         completeTask()
-    elseif input == "Print to-do list" then
+    elseif input == "get todo list" then
         printTodoList()
-    elseif input == "Exit" then
+    elseif input == "exit" then
         exitProgram()
     end
 end
