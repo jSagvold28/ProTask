@@ -5,16 +5,13 @@ local function addTask()
     io.write("Task name: ")
     local task = io.read("*line")
 
-
     io.write("Due date (MM-DD-YYYY): ")
     local dueDate = io.read("*line")
     if dueDate == "" then dueDate = nil end
 
-
     io.write("Priority (Low//Medium//High//Top): ")
     local priority = io.read("*line")
     if priority == "" then priority = nil end
-
 
     io.write("Subtasks (separated by commas): ")
     local subtasksStr = io.read("*line")
@@ -25,7 +22,6 @@ local function addTask()
         end
     end
 
-
     local newTask = {
         task = task,
         dueDate = dueDate,
@@ -33,10 +29,7 @@ local function addTask()
         subtasks = subtasks,
         completed = false
     }
-
-
     table.insert(todo_list, newTask)
-
 
     local file = io.open("taskList.txt", "a")
 
@@ -45,27 +38,29 @@ local function addTask()
     file:write("Due date: " .. dueDate .. "\n")
     file:write("Priority: " .. priority .. "\n")
     file:write("Sub tasks: " .. subtasksStr .. "\n")
-    
+
     file:close()
+    print("Task added! Check the explorer for: taskList.txt")
+
+    io.write("Enter this to go to the list of commands")
 end
 
-
 local function completeTask()
-
     io.write("Task index: ")
     local taskIndex = tonumber(io.read("*line"))
-
 
     if todo_list[taskIndex] then
         todo_list[taskIndex].completed = true
 
-        print("Congratulations on completing that task! Here's a cookie.")
-    else
+        local randomCookieAmounts = {"1 cookie", "5 cookies"}
 
+        print("Congratulations on completing that task! Here's: " ..
+                  table.concat(randomCookieAmounts, ", "))
+
+    else
         print("Error: Task not found.")
     end
 end
-
 
 local function printTodoList()
 
@@ -82,7 +77,6 @@ local function printTodoList()
     end
 end
 
-
 local function exitProgram()
     print("Exiting")
     os.execute("sleep 0.2")
@@ -90,8 +84,11 @@ local function exitProgram()
     os.exit()
 end
 
-
 while true do
+    print("")
+    io.write("Press enter to view the commands: ")
+    io.flush()
+    io.read("*line")
 
     print("")
     print("ProTask Commands:")
