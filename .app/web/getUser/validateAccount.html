@@ -1,43 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>ProTask | User Authenticaiton</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="container">
-      <h1>Login or Sign Up</h1>
-      <form id="login-form">
-        <div class="form-group">
-          <label for="login-email">Email address</label>
-          <input type="email" class="form-control" id="login-email" required>
-        </div>
-        <div class="form-group">
-          <label for="login-password">Password</label>
-          <input type="password" class="form-control" id="login-password" required>
-        </div>
-        <button type="submit" class="btn" onclick="window.location.href='http://127.0.0.1:5500/.app/web/app/index.html'">Sign in & go to app</button>
-      </form>
-      <form id="signup-form" style="display: none;">
-        <div class="form-group">
-          <label for="signup-email">Email address</label>
-          <input type="email" class="form-control" id="signup-email" required>
-        </div>
-        <div class="form-group">
-          <label for="signup-password">Password</label>
-          <input type="password" class="form-control" id="signup-password" required>
-        </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"
+  <title>ProTask | Signup/Login</title>
+</head>
+<body>
 
-        <div class="motivational-text">
-          <p style="font-size: 18px; color: #333;">
-            Seccess is never getting to the bottom of your to-do list. - Marissa Mayer, CEO of Yahoo
-          </p>
-        </div>
-        
+  <div class="top-contents">
+    <h1>
+      <strong>ProTask</strong>
+    </h1>
+  </div>
 
-      </form>
+  <div class="statement">
+    <p>
+      <strong>Master your to-do list with ProTask.</strong>
+    </p>
+  </div>
+  <div class="fields">
+    <form>
+      <label for="email">Email</label><br>
+      <input type="email" id="fname" name="fname"><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="lname" name="lname">
+    </form>
+
+    <div class="app-redirect">
+      <button onclick="location.href = 'http://127.0.0.1:5500/.app/web/app/index.html';" id="myButton" class="float-left submit-button" >Home</button>
     </div>
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
