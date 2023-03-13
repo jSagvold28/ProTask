@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Feature Request
+    url: https://github.com/jSagvold28/ProTask/blob/main/.github/ISSUE_TEMPLATE/fq.md
+    about: source file
+  - name: Create Pull request
+    url: https://github.com/jSagvold28/ProTask/pulls
+    about: Create a PR for your implementation to be pushed to production.
