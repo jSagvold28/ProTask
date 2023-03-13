@@ -1,4 +1,4 @@
-  body {
+body {
   background-color: #1c1f23;
   font-family: Arial, sans-serif;
 }
@@ -12,7 +12,7 @@
 }
 
 .submit {
-  color: blue;
+  color: #6466E9;
 }
 
 h1 {
@@ -37,7 +37,7 @@ form {
 
 button {
   padding: 10px 20px;
-  background-color: #FF6B6B;
+  background-color: #6466E9;
   color: white;
   border: none;
   border-radius: 5px;
