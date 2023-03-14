@@ -4,6 +4,10 @@ body {
   color: white;
 }
 
+.logo {
+  text-align: center;
+}
+
 .top-contents {
   text-align: center;
   color: #6466E9;
@@ -11,9 +15,21 @@ body {
 
 .statement {
   text-align: center;
-  color: white;
+  color: #ffffff;
   font-size: 16px;
-  font-weight: 25px;
+  font-weight: 500;
+}
+
+.button-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  color: #6466E9;
+}
+
+.button-selector button {
+  margin-right: 10px;
 }
 
 .fields {
@@ -21,14 +37,15 @@ body {
   border-color: orange;
   text-align: center;
   font-size: 22px;
+  padding-bottom: 10px;
 }
 
-.app-redirect {
+.app-redirect button {
+  background-color: #6466e9;
+  color: white;
   border-radius: 5px;
   border: none;
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
-  /* color: #6466E9 !important;
-  background-color: #6466E9 !important; */
 }
