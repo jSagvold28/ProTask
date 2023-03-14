@@ -1,12 +1,19 @@
-# ProTask subscription
+# ProTask Plus Subscription
 
-## IMPORTANT NOTE
+The ProTask Plus subscription is a premium offering for users of the ProTask to-do list app. With ProTask Plus, users gain access to a variety of additional features and tools to help them stay organized and productive.
 
-This subscription is **not** real. This is just for learing and fun purposes.
+## Features
 
-## Benifits
+- Features that free users don't have
+- Alpha features
+- And much more!
 
-You will get:
-* Extra features
-* Alpha features
+## Pricing
 
+The ProTask Plus subscription is available for a monthly or annual fee. The monthly fee is $0.00 per month, while the annual fee is $0.00 per year.
+
+## Getting Started
+
+* Navigate over to the plusAccount folder to create your Plus subscription
+
+Thank you for choosing ProTask Plus! We're excited to help you elevate your productivity and achieve your goals.
