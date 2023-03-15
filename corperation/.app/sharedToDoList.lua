@@ -64,21 +64,33 @@ local function emailInvite()
     print("")
     
     print("Subject: " .. emailSubject)
-    print("Hey, " .. recipiantsName .. " requested you to join a Shared ProTask To-Do List. If you would like to join please enter this code inside of corportation/.app/enterSharedToDoList.lua. Here is your shared code: " .. savedCode)
+    print("Hey, " .. recipiantsName .. " requested you to join a Shared ProTask To-Do List. If you would like to join please enter this code inside of corportation/.app/joinSharedToDoList.lua. Here is your shared code: " .. savedCode)
     print(addedContent)
-    print("")
+    -- print("")
     print("Senserly,")
     print(sendersName)
+    print("This message was automated by ProTask, a real user named " .. sendersName .. " wants you to join a Shared ToDo List.")
 
 
 end
 emailInvite()
 
+local function writeSharedCodeToFile()
+
+    local file = io.open("sharedToDoListCode.txt", "w")
+
+    file:write(savedCode .. "\n")
+
+    file:close()
+end
+writeSharedCodeToFile()
+
 local function app()
 
-    print("") -- spacer
-    print("") -- spacer
-    print("") -- spacer
+
+    io.write("hit enter to reveal the todo list section")
+    io.flush()
+    io.read("*line")
     
 
     io.write("Task Name: ")
@@ -111,15 +123,6 @@ local function app()
 end
 app()
 
-local function writeSharedCodeToFile()
-
-    local file = io.open("sharedToDoListCode.txt", "w")
-
-    file:write(savedCode .. "\n")
-
-    file:close()
-end
-writeSharedCodeToFile()
   
   
 --   if verifyCode(enteredCode, savedCode) then
