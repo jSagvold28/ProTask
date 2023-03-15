@@ -77,7 +77,7 @@ emailInvite()
 
 local function writeSharedCodeToFile()
 
-    local file = io.open("sharedToDoListCode.txt", "w")
+    local file = io.open("sharedToDoListJoinCode.txt", "w")
 
     file:write(savedCode .. "\n")
 
