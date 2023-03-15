@@ -42,5 +42,10 @@ local function writeMeetingDataToFile()
 
     file:close()
 
+    if file == true then
+        print("Meeting created! Check the explorer for openMeetings.txt")
+    else
+        print("ERROR: meeting file not created. To solve this issue please rerun this file or try again later.")
+    end
 end
 writeMeetingDataToFile()
