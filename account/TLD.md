@@ -13,6 +13,7 @@
 * .studios
 * .gov
 * .co
+* .contact
 
 ### Last changed: March 14th, 2023 at 7:32am
 
