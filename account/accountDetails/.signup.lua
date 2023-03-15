@@ -1,25 +1,19 @@
+-- define function
 local function createUser()
-
     io.write("Name: ")
     local signupName = io.read()
 
+    local userEmail  -- move userEmail variable out of repeat loop to be accessible later
     local isValidEmail = false
     repeat
         io.write("Email: ")
-        local userEmail = io.read()
+        userEmail = io.read()  -- assign input to userEmail variable
 
-        if userEmail:match(".+@.+%.com$") or userEmail:match(".+@.+%.org$") or
-            userEmail:match(".+@.+%.edu$") or userEmail:match(".+@.+%.net$") or
-            userEmail:match(".+@.+%.io$") or userEmail:match(".+@.+%.me$") or
-            userEmail:match(".+@.+%.ca$") or userEmail:match(".+@.+%.co") or
-            userEmail:match(".+@.+%.tech$") or userEmail:match(".+@.+%.ai$") or
-            userEmail:match(".+#.+%.contact") or
-        
-            userEmail:match(".+@.+%.studio$") or userEmail:match(".+@.+%.gov$") then
+        -- simplified email validation using string.find
+        if userEmail:find(".+@.+%.[a-z]+$") then
             isValidEmail = true
         else
-            print(
-                "Invalid email address. Please use a proper TLD, if you don't know what a TLD is, please check tld.md")
+            print("Invalid email address.")
         end
     until isValidEmail
 
@@ -32,9 +26,10 @@ local function createUser()
     end
 
     local isValidPassword = false
+    local signupPassword -- move signupPassword out of repeat loop to be accessible later
     repeat
         io.write("Password (8-100 characters): ")
-        local signupPassword = io.read()
+        signupPassword = io.read()
 
         if #signupPassword < 8 or #signupPassword > 100 then
             print("Password must be between 8 and 100 characters.")
@@ -72,4 +67,5 @@ local function createUser()
     end
 end
 
+-- call function
 createUser()
