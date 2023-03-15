@@ -76,7 +76,7 @@ local function writeCorperationDataToFile()
 
         file:close()
 
-        print("Welcome " .. corpName .. "! Were exited to have you as a corperation using ProTask!")
+        print("Welcome, " .. corpName .. "! Were exited to have you as a corperation using ProTask!")
 
     end
 end
