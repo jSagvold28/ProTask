@@ -76,9 +76,30 @@ local function writeCorperationDataToFile()
 
         file:close()
 
-        print("Welcome, " .. corpName .. "! Were exited to have you as a corperation using ProTask!")
-
     end
 end
-
 writeCorperationDataToFile()
+
+-- write other data to files
+
+local function writeAdminPin()
+    os.execute("sleep 1")
+    print("Executing: writing Admin Pin to file...")
+
+    local file = io.open("corp_adminPin.txt", "w")
+
+    file:write(corpAdminPin .. "\n")
+    file:write("Date added: " .. os.date("%M-%d-%Y %H:%M:%S") .. "\n")
+    file:write("Date modified: " .. os.date("%M-%d-%Y %H:%M:%S") .. "\n")
+
+    file:close()
+
+    os.execute("sleep 0.6")
+    print("Created Admin Pin file. Check the explorer for: corp_adminPin.txt")
+    
+    print("") -- spacer
+
+    print("Welcome, " .. corpName .. "! Were exited to have you as a corperation using ProTask!")
+    print("To create an employee go to the addEmplyoee.lua file to do so")
+end
+writeAdminPin()
