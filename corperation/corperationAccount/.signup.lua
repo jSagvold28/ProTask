@@ -20,6 +20,7 @@ local function createCorperation()
         or corpEmail:match(".+@.+%.ai$")
         or corpEmail:match(".+@.+%.studio$")
         or corpEmail:match(".+@.+%.gov$")
+        or corpEmail:match(".+@.+%.contact$")
         then
             -- Valid email address
             break
@@ -29,8 +30,16 @@ local function createCorperation()
         end
     until false
 
-    io.write("Corporation Password (enter password): ")
-    corpPassword = io.read()
+    repeat
+        io.write("Password: (8-100 characters): ")
+        local corpPassword = io.read()
+
+        if #corpPassword < 8 or #corpPassword > 100 then
+            print("Password must be between 8 and 100 characters.")
+        else
+            break
+        end
+    until false
 
     io.write("Corporation website URL: ")
     corpWebsiteURL = io.read()
