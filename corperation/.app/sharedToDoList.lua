@@ -51,7 +51,7 @@ local function emailInvite()
     io.write("More recipiants (user , to seperate): ")
     local moreRecipiants = io.read()
 
-    io.write("Email Subject:")
+    io.write("Email Subject: ")
     local emailSubject = io.read()
 
     io.write("Added content of the email (opintal if nothing space): ")
@@ -75,6 +75,11 @@ end
 emailInvite()
 
 local function app()
+
+    print("") -- spacer
+    print("") -- spacer
+    print("") -- spacer
+    
 
     io.write("Task Name: ")
     local taskName = io.read()
@@ -105,6 +110,16 @@ local function app()
 
 end
 app()
+
+local function writeSharedCodeToFile()
+
+    local file = io.open("sharedToDoListCode.txt", "w")
+
+    file:write(savedCode .. "\n")
+
+    file:close()
+end
+writeSharedCodeToFile()
   
   
 --   if verifyCode(enteredCode, savedCode) then
