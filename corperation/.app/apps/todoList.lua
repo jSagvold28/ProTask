@@ -45,7 +45,7 @@ local function addTask()
     }
     table.insert(todo_list, newTask)
 
-    local file = io.open("taskList.txt", "a")
+    local file = io.open("corp_TasksList.txt", "a")
 
     file:write("\n")
     file:write("-------New Task -----" .. "\n")
