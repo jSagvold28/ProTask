@@ -82,6 +82,8 @@ local function writeCorperationDataToFile()
         file:write("Corporation website URL: " .. corpWebsiteURL .. "\n")
         file:write("Corporation total number of employees: " .. corpNumberOfEmployees .. "\n")
         file:write("Admin Pin: " .. corpAdminPin .. "\n")
+        file:write("Date Corporation joined ProTask: " .. os.date("%M-%D-%Y %H:%M:S"))
+        file:write("Date last edited: " .. os.date("%M-%D-%Y %H:%M:S"))
 
         file:close()
 
