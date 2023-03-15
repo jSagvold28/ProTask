@@ -23,12 +23,23 @@ local function addEmployee()
             break
         else
             -- Invalid email address
-            print("Invalid email address. Please enter a valid email address.")
+            print("Invalid email address. Please enter a valid email address. Check out TLD.md to view the supoorted TLD (top level domains)")
         end
     until false
 
     io.write("Employee Password: ")
     local employeePassword = io.read()
+
+    repeat
+        io.write("Password: (8-100 characters): ")
+        local employeePassword = io.read()
+
+        if #employeePassword < 8 or #employeePassword > 100 then
+            print("Password must be between 8 and 100 characters.")
+        else
+            break
+        end
+    until false
 
     io.write("Employee Role: ")
     local employeeRole = io.read()
