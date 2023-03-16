@@ -67,7 +67,7 @@ local function createSubscription()
     if input == "yes" then
         -- create file
 
-        local file = io.open("subscription.txt", "w")
+        local file = io.open("plusInfo.txt", "w")
 
         file:write("Name: " .. name .. "\n")
         file:write("Email: " .. userEmail .. "\n")
