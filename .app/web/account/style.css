@@ -1,0 +1,21 @@
+body {
+    background-color: #1c1f23;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.data-container {
+    color: #6466E9;
+}
+
+#profile-pic-preview {
+    max-width: 300px; /* set the maximum width of the image */
+    max-height: 300px; /* set the maximum height of the image */
+    margin-top: 10px; /* add some margin to separate the image from the label and input */
+  }
+  
+
+.button {
+    font-weight: 500px;
+    padding-right: 15px;
+}
