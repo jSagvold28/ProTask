@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>ProTask Account</title>
+  </head>
+  <body>
+    <div class="data-container">
+      <h1>ProTask Account</h1>
+    </div>
+
+    <div class="profile-icon">
+      <label for="profile-pic">Profile picture: *optional</label>
+      <input type="file" id="profile-pic" accept="image/*" onchange="previewProfilePic(event)">
+      <img id="profile-pic-preview" src="#" alt="Preview of profile picture">
+    </div>
+    
+    <div class="reset-data">
+      <h2>
+        Reset Data
+      </h2>
+      <div class="button">
+        <button onclick="window.open('http://127.0.0.1:5500/.app/web/getUser/validateAccount.html', '_blank')" style="background-color: #6466E9; color: white;">Reset Data Account Data</button>
+      </div>      
+    </div>
+
+    <div class="button">
+      
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      function previewProfilePic(event) {
+        var input = event.target;
+        var preview = document.getElementById("profile-pic-preview");
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            preview.setAttribute("src", e.target.result);
+          };
+          reader.readAsDataURL(input.files[0]);
+        } else {
+          preview.setAttribute("src", "#");
+        }
+      }
