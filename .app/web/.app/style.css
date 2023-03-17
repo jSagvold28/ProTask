@@ -93,8 +93,10 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000000bb;
+  background-color: #00000073;
   z-index: 9999;
+  padding-top: 10px;
+  padding-bottom: 7.5px;
 }
 
 .logo {
@@ -112,11 +114,6 @@ nav {
 
 .nav-items a:hover {
   text-decoration: underline;
-}
-
-.pfp-icon {
-  width: 15px;
-  height: auto;
 }
 
 .background {
