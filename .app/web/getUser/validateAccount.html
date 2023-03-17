@@ -30,11 +30,26 @@
     <h3>Your on login</h3>
     <form>
       <label for="email">Email</label><br>
-      <input type="email" id="fname" name="fname"><br>
+      <input type="email" id="email" name="email"><br>
       <label for="password">Password:</label><br>
-      <input type="password" id="lname" name="lname">
+      <input type="password" id="password" name="password">
+      <button onclick="storeFormData()">Submit</button>
     </form>
+    <p><strong>MAKE SURE YOU PRESS SUBMIT THEN GO TO APP</strong></p>
 
+    
+    <script>
+  function storeFormData() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+  
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+    console.log('Form data saved to local storage.');
+}
+
+    </script>
+    
     <div class="app-redirect">
       <button onclick="location.href = 'http://127.0.0.1:5500/.app/web/appSelector/index.html';" id="myButton" class="float-left submit-button">Go to App Selector</button>
     </div>
