@@ -1,85 +1,35 @@
-body {
-  background-color: #1c1f23;
-  font-family: Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ProTask - To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>ProTask</h1>
 
 
-.container {
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 600px;
-  color: white;
-}
+      <div class="motivational-message" style="text-align: center;">
+        <p>"Persistence is very important. You should not give up unless you are forced to give up." - Elon Musk</p>
+      </div>
 
-.submit {
-  color: #6466E9;
-}
+      <div class="music-redirect">
+        <a href="http://127.0.0.1:5500/.app/web/app/focusMusic/index.html">Go to focus music</a>
 
-h1 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-form {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-#add-task-input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  color: rgb(0, 0, 0);
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #6466E9;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.task-checkbox {
-  margin-right: 10px;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #363636;
-  border-radius: 5px;
-}
-
-.task-checkbox:checked {
-  background-color: #363636;
-}
-
-label {
-  font-size: 16px;
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  text-decoration: none;
-  background-color: #FDF5E6;
-  padding: 10px;
-  border-radius: 5px;
-  flex: 1;
-}
-
-label:hover {
-  text-decoration: line-through;
-}
+        <p>Go to focus music:<a href="http://127.0.0.1:5500/.app/web/app/focusMusic/index.html" target="_blank"></a>.</p>
+      </div>
+      
+      <form id="add-task-form">
+        <input type="text" id="add-task-input" placeholder="Add a task...">
+        <button type="submit">Add task</button>
+      </form>
+      <ul id="task-list">
+      </ul>
+      <div class="logout">
+        <button onclick="location.href = 'http://127.0.0.1:5500/.app/web/getUser/validateAccount.html';" id="myButton" class="float-left submit-button" >Log out</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
