@@ -4,7 +4,23 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.header {
+    padding-bottom: auto;
+}
+
+.profile-icon {
+    box-shadow: 2in;
+    color: #2D6898;
+}
+
 .data-container {
+    padding-bottom: 7.5px;
+    color: #6466E9;
+}
+
+.reset-data {
+    padding-top: 15px;
+    padding: 5.5px;
     color: #6466E9;
 }
 
