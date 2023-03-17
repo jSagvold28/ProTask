@@ -3,7 +3,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-
 .container {
   margin: 0 auto;
   padding: 20px;
@@ -82,4 +81,50 @@ label {
 
 label:hover {
   text-decoration: line-through;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: auto;
+  padding-bottom: 5.5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000bb;
+  z-index: 9999;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  padding-left: 5px;
+}
+
+.nav-items a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.nav-items a:hover {
+  text-decoration: underline;
+}
+
+.pfp-icon {
+  width: 15px;
+  height: auto;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
 }
