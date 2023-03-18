@@ -1,28 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"
-    <title>ProTask App Selector</title>
+	<title></title>
+	<style>
+		nav {
+  background-color: #00000073;
+			height: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 20px;
+		}
+
+		nav img {
+			height: 30px;
+			cursor: pointer;
+		}
+
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: none;
+		}
+
+		nav li {
+			margin: 0 10px;
+			display: inline-block;
+		}
+	</style>
 </head>
 <body>
-    <div class="msg">
+	<nav>
+		<img src="ham-menu.png" alt="menu" onclick="toggleMenu()">
+		<ul id="menu">
+            <a href="http://127.0.0.1:5500/.app/web/.app/index.html">App</a>
+
+            <a href="http://127.0.0.1:5500/.app/web/pomodoro/index.html">Pomodoro Timer</a>
+        
+            <a href="http://127.0.0.1:5500/.app/web/getUser/validateAccount.html">Log Out</a>
+	</nav>
+
+	<script>
+		function toggleMenu() {
+			var menu = document.getElementById("menu");
+			if (menu.style.display === "none") {
+				menu.style.display = "block";
+			} else {
+				menu.style.display = "none";
+			}
+		}
+	</script>
+
+    <div class="heading">
         <h1>ProTask App Selector</h1>
         <p>Awesomeness awaits...</p>
-        <p>Pick the app that you want to take a journey on.</p>
-    </div>
-    <div class="app-selector">
-        <div>
-            <button onclick="window.location.href='http://127.0.0.1:5500/.app/web/app/index.html'">Go to app</button>
-            <button onclick="window.location.href='http://127.0.0.1:5500/.app/web/app/focusMusic/index.html'">Focus music</button>
-            <button onclick="window.location.href='http://127.0.0.1:5500/.app/web/getUser/validateAccount.html'">Sign out</button>
 
-
-          </div>
-          
     </div>
-    
+
+    <div class="all-links">
+
+        <form action="http://127.0.0.1:5500/.app/web/.app/index.html">
+            <input type="submit" value="App" />
+        </form>
+
+        <form action="http://127.0.0.1:5500/.app/web/account/account.html">
+            <input type="submit" value="Account" />
+        </form>
+
+        <form action="http://127.0.0.1:5500/.app/web/focusMusic/index.html">
+            <input type="submit" value="Focus Music" />
+        </form>
+
+        <form action="http://127.0.0.1:5500/.app/web/goals/goals.html">
+            <input type="submit" value="Set Goals" />
+        </form>
+
+        <form action="http://127.0.0.1:5500/.app/web/pomodoro/index.html">
+            <input type="submit" value="Pomodoro Timer" />
+        </form>
+    </div>
 </body>
 </html>
