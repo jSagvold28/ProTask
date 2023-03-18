@@ -1,0 +1,25 @@
+body {
+    background-color: #1c1f23;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    text-align: center;
+}
+
+.reason-1 {
+    padding: 10px 10px 10px 10px;
+    background-color: #6466E9;
+    font-weight: bold;
+}
+
+.reason-2 {
+    padding: 10px 10px 10px 10px;
+    background-color: #6466E9;
+}
+
+.other-information {
+    padding-top: 50px;
+    color: white;
+}
