@@ -1,92 +1,66 @@
-const timerDisplay = document.querySelector('.time');
-const startBtn = document.querySelector('#start');
-const stopBtn = document.querySelector('#stop');
-const resetBtn = document.querySelector('#reset');
-const workTimeInput = document.querySelector('#work-time');
-const breakTimeInput = document.querySelector('#break-time');
-const taskList = document.querySelector('#task-list');
-const newTaskInput = document.querySelector('#new-task');
-const addTaskBtn = document.querySelector('#add-task');
+body {
+	background-color: #1c1f23;
+	color: white;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
 
-let seconds = workTimeInput.value * 60;
-let timerInterval;
-let isTimerRunning = false;
-let isWorkTime = true;
+}
 
-function startTimer() {
-  if (!isTimerRunning) {
-    isTimerRunning = true;
-    timerInterval = setInterval(() => {
-      seconds--;
-      if (seconds < 0) {
-        clearInterval(timerInterval);
-        isTimerRunning = false;
-        if (isWorkTime) {
-          seconds = breakTimeInput.value * 60;
-          isWorkTime = false;
-        } else {
-          seconds = workTimeInput.value * 60;
-          isWorkTime = true;
-        }
-        startTimer();
-        alert('Congrats 🎉, on completing that session like a Pro! Enjoy the break session!');
-        console.log("Pomdoro session completed.");
-      } else {
-        updateTimerDisplay();
-      }
-    }, 1000);
+.header {
+	color: #6466E9;
+}
+
+.pomodoro {
+	font-weight: 800px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
   }
-}
-      
-function stopTimer() {
-  clearInterval(timerInterval);
-  isTimerRunning = false;
-  console.log("Pomodoro timer stopped. NOT AN ERROR, user input.");
-}
-
-function resetTimer() {
-  clearInterval(timerInterval);
-  isTimerRunning = false;
-  isWorkTime = true;
-  seconds = workTimeInput.value * 60;
-  updateTimerDisplay();
-  console.log("Reset timer. NOT USER ERROR, inputted.");
-}
-
-function updateTimerDisplay() {
-  const minutes = Math.floor(seconds / 60);
-  const remainderSeconds = seconds % 60;
-  timerDisplay.textContent = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
-}
-
-function addNewTask() {
-  const taskText = newTaskInput.value;
-  if (taskText) {
-    const taskItem = document.createElement('li');
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.addEventListener('click', function() {
-      setTimeout(function() {
-        taskList.removeChild(taskItem);
-        console.log("Removed task from todo list. Task name: ", taskItem)
-      }, 500);
-    });
-    taskItem.appendChild(checkbox);
-    taskItem.appendChild(document.createTextNode(taskText));
-    taskList.appendChild(taskItem);
-    newTaskInput.value = '';
+  
+  .timer {
+	color: #e3c219f6;
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 30px;
   }
-}
-
-
-
-
-startBtn.addEventListener('click', startTimer);
-stopBtn.addEventListener('click', stopTimer);
-resetBtn.addEventListener('click', resetTimer);
-addTaskBtn.addEventListener('click', addNewTask);
-
-// Request permission for notifications
-if (Notification.permission !== 'granted') {
-  Notification.requestPermission();
-}
+  
+  .time {
+	font-size: 177px;
+	font-weight: bolder;
+  }
+  
+  .controls {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: 900px;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+  }
+  
+  button {
+	font-size: 16px;
+	padding: 8px 16px;
+	margin-right: 10px;
+  }
+  
+  .settings {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  label {
+	font-size: 16px;
+	margin-bottom: 5px;
+  }
+  
+  input {
+	font-size: 16px;
+	padding: 5px;
+	width: 60px;
+	margin-bottom: 10px;
+  }
+  
