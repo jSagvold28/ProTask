@@ -30,6 +30,7 @@ function startTimer() {
         }
         startTimer();
         alert('Congrats 🎉, on completing that session like a Pro! Enjoy the break session!');
+        console.log("Pomdoro session completed.");
       } else {
         updateTimerDisplay();
       }
@@ -49,6 +50,7 @@ function resetTimer() {
   isWorkTime = true;
   seconds = workTimeInput.value * 60;
   updateTimerDisplay();
+  console.log("Reset timer. NOT USER ERROR, inputted.");
 }
 
 function updateTimerDisplay() {
