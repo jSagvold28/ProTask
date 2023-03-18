@@ -1,0 +1,66 @@
+body {
+	background-color: #1c1f23;
+	color: white;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.header {
+	color: #6466E9;
+}
+
+.pomodoro {
+	font-weight: 800px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  .timer {
+	color: #e3c219f6;
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 30px;
+  }
+  
+  .time {
+	font-size: 177px;
+	font-weight: bolder;
+  }
+  
+  .controls {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: 900px;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+  }
+  
+  button {
+	font-size: 16px;
+	padding: 8px 16px;
+	margin-right: 10px;
+  }
+  
+  .settings {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  label {
+	font-size: 16px;
+	margin-bottom: 5px;
+  }
+  
+  input {
+	font-size: 16px;
+	padding: 5px;
+	width: 60px;
+	margin-bottom: 10px;
+  }
+  
