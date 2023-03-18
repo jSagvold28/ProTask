@@ -52,3 +52,5 @@ Sorry, but this GitHub page is only for my hobby for coding and projects. These 
 * .gov
 
 If there is not a domain that your account uses, please create a Issue, for the Issue please do feature request.
+
+# Website link (app switcher): http://127.0.0.1:5500/.app/web/appSelector/index.html
