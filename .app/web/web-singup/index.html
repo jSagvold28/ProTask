@@ -10,22 +10,25 @@
       <button onclick="location.href='http://127.0.0.1:5500/.app/web/getUser/validateAccount.html';" id="myButton" class="float-left submit-button" >Login</button>
     </div>
   
-    <form id="signup-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" required>
+    
+    <div class="container">
+      <form id="signup-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+  
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+  
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" required>
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" required>
-
-      <label for="profile-pic">Profile picture: *optional</label>
-      <input type="file" id="profile-pic" accept="image/*">
-
-      <button onclick="window.location.href='http://127.0.0.1:5500/.app/web/appSelector/index.html'" type="button">Sign up & to app</button>
-      <button type="submit2">Sign Up Only</button>
-    </form>
+  
+  
+        <button onclick="window.location.href='http://127.0.0.1:5500/.app/web/appSelector/index.html'" type="button">Sign up & to app</button>
+        <button type="submit2">Sign Up Only</button>
+        <p>By just singing up only, you will not be redirected to the app.</p>
+      </form>
+    </div>
 
     <script src="main.js"></script>
   </body>
