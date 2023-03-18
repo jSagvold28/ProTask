@@ -2,6 +2,9 @@ body {
     background-color: #1c1f23;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    padding: 4.5px;
+    padding-bottom: 5px;
+    padding-top: auto;
 }
 
 .header {
@@ -15,6 +18,17 @@ body {
 }
 
 .reason-2 {
+    padding: 10px 10px 10px 10px;
+    background-color: #6466E9;
+}
+
+
+.reason-3 {
+    padding: 10px 10px 10px 10px;
+    background-color: #6466E9;
+}
+
+.reason-4 {
     padding: 10px 10px 10px 10px;
     background-color: #6466E9;
 }
