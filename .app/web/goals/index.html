@@ -15,17 +15,6 @@
         </h1>
     </div>
 
-    <div class="instructions">
-        <h2>
-            Instructions:
-    </h2>
-        <p>
-        1. Create 3 goals
-        </p>
-        <p>
-        2. Maintain the goals
-    </p>
-    </div>
 
     <div class="add-goal">
         <label for="text">Goal 1: </label>
@@ -79,6 +68,68 @@
           console.log("Goal 2: ", goal2);
           console.log("Goal 3: ", goal3);
 
+        });
+      </script>
+
+      <div class="header2">
+        <h2>General Goals:</h2>
+        <p>General goals are goals that are not nessasarly related to productivity, they could be like exersize more, sleep for eight hours, ect.</p>
+      </div>
+
+      <div class="general-goals">
+
+        <label for="genGoal1">General Goal 1 : </label>
+        <input type="text" id="genGoal1" name="genGoal1"><br><br>
+      
+        <label for="genGoal2">General Goal 2: </label>
+        <input type="text" id="genGoal2" name="genGoal2"><br><br>
+      
+        <label for="genGoal3">General Goal 3: </label>
+        <input type="text" id="genGoal3" name="genGoal3"><br><br>
+      
+        <button id="save-general-button">Save General Goals</button>
+      
+      </div>
+      
+      <script>
+        const genGoal1Input = document.getElementById('genGoal1');
+        const genGoal2Input = document.getElementById('genGoal2');
+        const genGoal3Input = document.getElementById('genGoal3');
+        const saveButton = document.getElementById('save-general-button');
+      
+        // Load saved goals from local storage on page load
+        window.addEventListener('load', function() {
+          const savedGoal1 = localStorage.getItem('genGoal1');
+          if (savedGoal1) {
+            genGoal1Input.value = savedGoal1;
+          }
+      
+          const savedGoal2 = localStorage.getItem('genGoal2');
+          if (savedGoal2) {
+            genGoal2Input.value = savedGoal2;
+          }
+      
+          const savedGoal3 = localStorage.getItem('genGoal3');
+          if (savedGoal3) {
+            genGoal3Input.value = savedGoal3;
+          }
+        });
+      
+        // Save goals to local storage when save button is clicked
+        saveButton.addEventListener('click', function() {
+          const goal1 = genGoal1Input.value;
+          const goal2 = genGoal2Input.value;
+          const goal3 = genGoal3Input.value;
+      
+          localStorage.setItem('genGoal1', goal1);
+          localStorage.setItem('genGoal2', goal2);
+          localStorage.setItem('genGoal3', goal3);
+      
+          console.log("Goals saved to local storage.");
+          console.log("Fetched goals:");
+          console.log("General Goal 1: ", goal1);
+          console.log("General Goal 2: ", goal2);
+          console.log("General Goal 3: ", goal3);
         });
       </script>
       
