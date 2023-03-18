@@ -13,7 +13,8 @@
 
 ### CSS
 
-.reason-1 {
+`` .reason-1 {
     padding: 10px 10px 10px 10px;
     background-color: blue;
-}
+    font-weight: bold;
+} ``
