@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"
+    <title>ProTask - Goals</title>
+</head>
+<body>
+
+    <div class="logo">
+        <h1>
+            ProTask Goals
+        </h1>
+    </div>
+
+    <div class="instructions">
+        <h2>
+            Instructions:
+    </h2>
+        <p>
+        1. Create 3 goals
+        </p>
+        <p>
+        2. Maintain the goals
+    </p>
+    </div>
+
+    <div class="add-goal">
+        <label for="text">Goal 1: </label>
+        <input type="text" id="goal1" name="goal1"><br><br>
+      
+        <label for="text">Goal 2: </label>
+        <input type="text" id="goal2" name="goal2"><br><br>
+      
+        <label for="text">Goal 3: </label>
+        <input type="text" id="goal3" name="goal3"><br><br>
+      
+        <button id="save-button">Save Goals</button>
+      </div>
+      
+      <script>
+        const goal1Input = document.getElementById('goal1');
+        const goal2Input = document.getElementById('goal2');
+        const goal3Input = document.getElementById('goal3');
+        const saveButton = document.getElementById('save-button');
+      
+        // Load saved goals from local storage on page load
+        window.addEventListener('load', function() {
+          const savedGoal1 = localStorage.getItem('goal1');
+          if (savedGoal1) {
+            goal1Input.value = savedGoal1;
+          }
+      
+          const savedGoal2 = localStorage.getItem('goal2');
+          if (savedGoal2) {
+            goal2Input.value = savedGoal2;
+          }
+      
+          const savedGoal3 = localStorage.getItem('goal3');
+          if (savedGoal3) {
+            goal3Input.value = savedGoal3;
+          }
+        });
+      
+        // Save goals to local storage when save button is clicked
+        saveButton.addEventListener('click', function() {
+          const goal1 = goal1Input.value;
+          const goal2 = goal2Input.value;
+          const goal3 = goal3Input.value;
+      
+          localStorage.setItem('goal1', goal1);
+          localStorage.setItem('goal2', goal2);
+          localStorage.setItem('goal3', goal3);
+          console.log("Goals saved to localStoage.");
+          console.log("Fetched goals:");
+          console.log("Goal 1: ", goal1);
+          console.log("Goal 2: ", goal2);
+          console.log("Goal 3: ", goal3);
+
+        });
+      </script>
+      
+      
+    
+</body>
+</html>
