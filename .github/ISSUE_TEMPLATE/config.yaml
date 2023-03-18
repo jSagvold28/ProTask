@@ -6,3 +6,6 @@ contact_links:
   - name: Create Pull request
     url: https://github.com/jSagvold28/ProTask/pulls
     about: Create a PR for your implementation to be pushed to production.
+  - name: Testimonial
+  url: https://github.com/jSagvold28/ProTask/blob/main/.github/ISSUE_TEMPLATE/testimonial.md
+  about: Tell me what you think!
