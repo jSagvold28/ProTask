@@ -18,6 +18,9 @@
     <div class="data-container">
       <h1>ProTask Account</h1>
     </div>
+  
+  
+    
     
     <div class="reset-data">
       <h2>
@@ -31,6 +34,34 @@
     <!-- <div class="button">
       
     </div> -->
+
+    <div class="fetched-goals">
+      <h2>Goals:</h2>
+      <ul>
+          <li id="goal1"></li>
+          <li id="goal2"></li>
+          <li id="goal3"></li>
+      </ul>
+  </div>
+  
+  <script>
+      // Retrieve the values of the goals from localStorage
+      const goal1 = localStorage.getItem('goal1');
+      const goal2 = localStorage.getItem('goal2');
+      const goal3 = localStorage.getItem('goal3');
+    
+      // Check if any goals are found in localStorage
+      if (goal1 || goal2 || goal3) {
+          // Display the values inside the <li> elements
+          document.getElementById('goal1').innerHTML = goal1;
+          document.getElementById('goal2').innerHTML = goal2;
+          document.getElementById('goal3').innerHTML = goal3;
+      } else {
+          // Show message if no goals are found in localStorage
+          document.querySelector('.fetched-goals').innerHTML = 'There are no goals set.';
+          console.log('ERROR: no goals were found inside of localStorage. The user needs to se goals to have them displayed.');
+      }
+  </script>
 
     <script src="script.js"></script>
     <script>
