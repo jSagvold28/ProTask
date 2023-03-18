@@ -1,0 +1,18 @@
+body {
+    background-color: #1c1f23;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left; /* This may change to center align */
+    padding: 4.5;
+    padding-left: auto;
+}
+
+.logo {
+    color:#6466E9;
+}
+
+.add-task {
+    padding-left: 4.5px;
+    padding-top: auto;
+    padding-bottom: auto;
+}
